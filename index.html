@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>   
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+   <script src = "./throw.js"></script>
+</head>
+<body>
+    <a-scene id="scene">
+        <a-assets>        
+            <a-asset-item
+              id="pins"
+              src="./models/bowling_pin/scene.gltf"
+            ></a-asset-item>        
+          </a-assets>
+
+           <!--Camera and Cursor-->
+      <a-entity
+      id="camera"
+      camera
+      position="0 3.5 5"
+      wasd-controls = "enabled: false;"
+      look-controls="pointerLockEnabled: false"        
+    >
+      <a-cursor></a-cursor> 
+
+    </a-entity>
+    <!--bowling ball-->
+    <a-entity bowling-balls></a-entity>
+
+    <!--alley-->
+    <a-plane
+      id="ground"
+      repeat="5 5"
+      position="0 0 0"
+      rotation="-90 0 0"
+      height="200"
+      width="20"
+      color="tan"
+      static-body
+      visible="true"
+    >   
+    </a-plane>
+
+    <a-cylinder id = "bumper1" rotation = "0 90 90" position = "-8.5 0 0" color = "#000" radius = "1.5" height = 200 ></a-cylinder>
+    <a-cylinder id = "bumper1" rotation = "0 90 90" position = "8.5 0 0" color = "#000" radius = "1.5" height = 200 ></a-cylinder>
+
+    <!--pins-->
+    <a-entity  id="pin1" gltf-model="#pins" position="0 0 -10" scale = "6.5 6.5 6.5" ></a-entity>
+
+    <a-entity  id="pin2" gltf-model="#pins" position="1.5 0 -11.5" scale = "6.5 6.5 6.5" ></a-entity>
+
+    <a-entity  id="pin3" gltf-model="#pins" position="-1.5 0 -11.5" scale = "6.5 6.5 6.5" ></a-entity>
+
+    <a-entity  id="pin4" gltf-model="#pins" position="0 0 -11.5" scale = "6.5 6.5 6.5" ></a-entity>
+
+    <a-entity  id="pin5" gltf-model="#pins" position="1 0 -13" scale = "6.5 6.5 6.5" ></a-entity>
+    
+    <a-entity  id="pin6" gltf-model="#pins" position="-1 0 -13" scale = "6.5 6.5 6.5" ></a-entity>
+
+    <a-entity  id="pin7" gltf-model="#pins" position="0 0 -13" scale = "6.5 6.5 6.5" ></a-entity>
+    
+    <a-entity  id="pin8" gltf-model="#pins" position="3 0 -13" scale = "6.5 6.5 6.5" ></a-entity>
+
+    <a-entity  id="pin9" gltf-model="#pins" position="-3 0 -13" scale = "6.5 6.5 6.5" ></a-entity>
+    
+    </a-scene>
+</body>
+</html>
